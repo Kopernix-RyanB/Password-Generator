@@ -21,7 +21,7 @@
 	
 	<div class="container">
 
-		<div class="text-area">
+		<div class="text-area mg-left">
 			<h1>
 				Generate a 
 				<span style="display: block; color: #4ADF86;">
@@ -32,15 +32,33 @@
 		</div>
 		
 		<div class="options">
-			<button id="generate-el">Generate password</button>
-			<!--
-			<label for="password-length">Length: (8-20)</label>
-			<div class="lenth-control">				
-				<button id="decrement">-</button>
-				<input type="number" id="password-length" min="8" max="20" value="20">
-				<button id="increment">+</button>
+			<div class="sub-option">
+				<label for="length">Password length</label>
+				<input type="number" id="length" min="8" max="20" value="15"">
 			</div>
-			-->
+			<div class="sub-option">
+				<label for="uppercase">Include uppercase letters</label>
+				<input type="checkbox" id="uppercase" checked>
+			</div>		
+			<div class="sub-option">
+				<label for="lowercase">Include lowercase letters</label>
+				<input type="checkbox" id="lowercase" checked>
+			</div>
+			<div class="sub-option">
+				<label for="numbers">Include numbers</label>
+				<input type="checkbox" id="numbers" checked>
+			</div>
+			<div class="sub-option">
+				<label for="symbols">Include symbols</label>
+				<input type="checkbox" id="symbols" checked>
+			</div>
+
+			<button id="generate-el">
+				<svg width="14" height="18" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path fill-rule="evenodd" clip-rule="evenodd" d="M8.3.046A1 1 0 0 1 9 1v5h4a1 1 0 0 1 .82 1.573l-7 10A1 1 0 0 1 5 17v-5H1a1 1 0 0 1-.82-1.573l7-10A1 1 0 0 1 8.3.047Z" fill="#fff"/>
+				</svg> 
+				Generate password
+			</button>
 		</div>
 	
 		<div class="straight-line"></div>

@@ -1,5 +1,6 @@
 # Password-Generator
-A small tool that generates passwords, with symbol options and copy on click.
+
+A small tool that generates passwords based on defined length, including symbol and numbers, and an option to copy on click.
 
 ## Technology used
 

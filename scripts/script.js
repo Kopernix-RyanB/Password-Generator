@@ -14,7 +14,7 @@ let resultEl2 = document.getElementById("password-el-2")
 
 let generateEl = document.getElementById("generate-el")
 
-// Generator functions
+// Functions that generate a character from the list
 
 function getUppercase() {
     return characters[Math.floor(Math.random() * 26)] 
@@ -32,30 +32,58 @@ function getSymbols() {
     return characters[Math.floor(Math.random() * 29) + 62]
 }
 
-// Password assembler function
+// Saves the returned value of each function in a key 
+
+const randomFunc = {
+    lower: getLowercase,
+    upper: getUppercase,
+    number: getNumbers,
+    symbol: getSymbols
+}
+
+// Values checker function
 
 generateEl.addEventListener("click", () => {
-    let length = +lengthEl.value
-    
+    let hasLength = +lengthEl.value
+    let hasUpper = uppercaseEl.checked
+    let hasLower = lowercaseEl.checked
+    let hasSymbol = symbolsEl.checked
+    let hasNumbers = numbersEl.checked
+    // I THINK I SHOULD PASS THE VARIABLES IN THE CALLED FUNCTION
+    resultEl1.innerText = generatePassword(hasLength, hasLower, hasNumbers, hasSymbol, hasUpper)
 })
 
+function generatePassword(hasLength, hasLower, hasNumbers, hasSymbol, hasUpper) {
+    let password = ""
+    
+    // if nothing is checked, then no password will be generated
+    const typesCount = hasLower + hasNumbers + hasUpper + hasSymbol
+    if (typesCount === 0) {
+        return ''
+    }
+    // console.log("typesCount: ", typesCount)
+    
+    // filters out any value that is false; any unchecked box
+    const typesArr = [{hasLower}, {hasNumbers}, {hasSymbol}, {hasUpper}].filter
+    (
+        item => Object.values(item)[0]
+    )
+    // console.log("typesArr: ", typesArr)
+    
 
-// let passwordLength = 12
+    for (let i = 0; i < hasLength; i += typesCount) {
+        typesArr.forEach(type => {
+            // Object = randomFunc
+            // keys = lower (or any key) 
+            // type = hasLower
+            // password += randomFunc.lower(hasLower)[0]
+            // All it does, is check which one is checked
+            const funcName = Object.keys(type)[0]
+            //console.log('funcName: ', funcName)
+            
+            password += randomFunc[funcName]
+        })
+    }
 
-// function getRandomCharacter() {
-//     let randomChar = Math.floor(Math.random() * characters.length)
-//     return characters[randomChar]
-// }
-
-// function generateRandomPassword() {
-//     let randomPassword = ""
-//     for (let i = 0; i < passwordLength; i++) {
-//         randomPassword += getRandomCharacter()         
-//     }
-//     return randomPassword
-// }
-
-// const generatedPasswordOne = generateRandomPassword()
-
-// console.log("Here is a random password: ", generatedPasswordOne)
-
+    console.log(password)
+}

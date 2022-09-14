@@ -122,7 +122,11 @@ body {
 		input[type='number']{
 			width: 80px;
 			text-align: center;
-		} 
+		}
+
+		.hidden {
+			/* display: none; */
+		}
 
 		/* CUSTOM CHECKBOX CODE SNIPPET
 		.css-checkbox { 

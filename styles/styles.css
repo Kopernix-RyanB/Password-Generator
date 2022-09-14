@@ -104,6 +104,7 @@ body {
 	}
 		
 		.password {
+			font-size: 14px;
 			width: 211px;
 			height: 39px;
 			background: #273549;
@@ -122,10 +123,6 @@ body {
 		input[type='number']{
 			width: 80px;
 			text-align: center;
-		}
-
-		.hidden {
-			/* display: none; */
 		}
 
 		/* CUSTOM CHECKBOX CODE SNIPPET

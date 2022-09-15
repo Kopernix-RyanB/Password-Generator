@@ -27,8 +27,8 @@ The goal of the challenge is :
 
 ### Links
 
-- Live site:   [@GitHub]
-- Source code: [@GitHub]
+- Live site:   [@GitHub](https://kopernix-ryanb.github.io/Password-Generator/)
+- Source code: [@GitHub](https://github.com/Kopernix-RyanB/Password-Generator)
 
 
 ## My process
@@ -40,10 +40,6 @@ The goal of the challenge is :
 - Flexbox
 - Vanilla Javascript
 - Git
-
-### What I learned
-
-Styling and scripting
 
 ### Road-map
 

@@ -27,7 +27,7 @@ function getRandomCharacter(low, high) {
     for (let i = low; i <= high; i++) {
         randomChar.push(i);
     }
-    console.log("randomChar:" ,randomChar);
+    //console.log("randomChar:" ,randomChar);
     return randomChar;    
 };
 
@@ -65,7 +65,7 @@ function generateRandomPassword(passwordLength, includeUC, includeLC, includeNum
     let randomPassword = [];
     for (let i = 0; i <= passwordLength; i++) {
         // randomPassword += getRandomCharacter(); and 
-        const chars = CHAR_CODES[Math.floor(Math.random() * CHAR_CODES.length)]; // previous: passwordLength, It only returned numbers between 8 and 20
+        const chars = CHAR_CODES[Math.floor(Math.random() * CHAR_CODES.length)]; // previous code was "passwordLength", It only returned numbers between 8 and 20
         randomPassword.push(characters[chars]);
     };
     console.log("randomPassword: ", randomPassword);
